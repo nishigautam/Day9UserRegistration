@@ -45,7 +45,7 @@ public class userMain {
 		return match.matches();
 	}
 	
-	//Rule2 - Should have at least 1 Numeric Number
+	//Rule4 - Should have exactly 1 Special Character
 	public static boolean isPasswordValid(String password) {
 		String regex = "[a-zA-Z0-9]{8,}$";
 		Pattern patt = Pattern.compile(regex);
