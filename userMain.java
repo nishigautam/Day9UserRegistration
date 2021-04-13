@@ -45,6 +45,7 @@ public class userMain {
 		return match.matches();
 	}
 	
+	//Rule2 - Should have at least 1 UpperCase
 	public static boolean isPasswordValid(String password) {
 		String regex = "[a-zA-Z0-9]{8,}$";
 		Pattern patt = Pattern.compile(regex);
