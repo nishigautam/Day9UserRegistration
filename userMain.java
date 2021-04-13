@@ -16,12 +16,21 @@ public class userMain {
 	}
 	public static boolean isLastName(String lastname) {
 		String regex = "^[A-Z]{1}[a-z]{2,}";
-		Pattern patt2 = Pattern.compile(regex);
+		Pattern patt = Pattern.compile(regex);
 		if(lastname == null) {
 			return false;
 		}
-		Matcher match2 = patt2.matcher(lastname);
-		return match2.matches();
+		Matcher match = patt.matcher(lastname);
+		return match.matches();
+	}
+	public static boolean isEmailValid(String emailid) {
+		String regex = "^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$";
+		Pattern patt = Pattern.compile(regex);
+		if(emailid == null) {
+			return false;
+		}
+		Matcher match = patt.matcher(emailid);
+		return match.matches();
 	}
 	
 	public static void main(String[] args) {
@@ -30,6 +39,8 @@ public class userMain {
 		String firstname = input.nextLine();
 		System.out.println("Enter lastname:");
 		String lastname = input.nextLine();
+		System.out.println("Enter Email-ID :");
+		String emailid = input.nextLine();
 		if(isFirstName(firstname) == true) {
 			System.out.println("Firstname is Correct");
 		}else {
@@ -39,6 +50,11 @@ public class userMain {
 			System.out.println("Lastname is Correct");
 		}else {
 			System.out.println("Lastname is Incorrect");
+		}
+		if(isEmailValid(emailid) == true) {
+			System.out.println("Email-ID is Correct");
+		}else {
+			System.out.println("Email-ID is Incorrect");
 		}
 	}
 }
