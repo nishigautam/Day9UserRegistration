@@ -47,7 +47,7 @@ public class userMain {
 	
 	//Rule4 - Should have exactly 1 Special Character
 	public static boolean isPasswordValid(String password) {
-		String regex = "[a-zA-Z0-9]{8,}$";
+		String regex = "^[a-zA-Z0-9]+[@#$%&*_+=!?]?$";
 		Pattern patt = Pattern.compile(regex);
 		if(password == null) {
 			return false;
